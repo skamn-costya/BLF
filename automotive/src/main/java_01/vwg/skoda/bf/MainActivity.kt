@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 //        CMHolder.matrix.setToSaturation(1F)
         SysSetHolder.init()
-//        ColorMatrixHolder.preSet(SysSetHolder.getPresetBLF())
+        ColorMatrixHolder.preSet(SysSetHolder.getPreset())
         ColorMatrixHolder.init()
 
 

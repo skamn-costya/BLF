@@ -14,32 +14,71 @@ import vwg.skoda.bf.screen.ColorMartixWraper
 
 @Composable
 fun Preview() {
-    Row (
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black),
-        verticalAlignment = Alignment.CenterVertically
-    ){
-        Column (
+    Column () {
+        Row(
             modifier = Modifier
-                .weight(1f)
-        ){
-            Image(
-//            painter = painterResource(id = R.drawable.apps),
-                painter = painterResource(id = R.drawable.rgb),
-                contentDescription = "Apps",
-            )
-        }
-        Column (
-            modifier = Modifier
-                .weight(1f)
-        ){
-            ColorMartixWraper {
+                .weight(3f)
+                .background(Color.Black),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+        ) {
+            Column(
+                modifier = Modifier
+                    .weight(1f),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Image(
-//                    painter = painterResource(id = R.drawable.apps),
+//            painter = painterResource(id = R.drawable.apps),
                     painter = painterResource(id = R.drawable.rgb),
                     contentDescription = "Apps",
                 )
+            }
+            Column(
+                modifier = Modifier
+                    .weight(1f),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                ColorMartixWraper {
+                    Image(
+//                    painter = painterResource(id = R.drawable.apps),
+                        painter = painterResource(id = R.drawable.rgb),
+                        contentDescription = "Apps",
+                    )
+                }
+            }
+        }
+        Row(
+            modifier = Modifier
+                .weight(1f)
+                .background(Color.Black),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+        ) {
+            Column(
+                modifier = Modifier
+                    .weight(1f),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.b2w),
+                    contentDescription = "Apps",
+                )
+            }
+            Column(
+                modifier = Modifier
+                    .weight(1f),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                ColorMartixWraper {
+                    Image(
+                        painter = painterResource(id = R.drawable.b2w),
+                        contentDescription = "Apps",
+                    )
+                }
             }
         }
     }

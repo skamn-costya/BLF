@@ -19,6 +19,13 @@ import vwg.skoda.bf.R
 import vwg.skoda.bf.holders.SysSetHolder
 
 
+var preset1: List<Float> =  listOf(
+    .8f, .05f,  .05f, 1f,
+    0f, .025f,  0f, 1f,
+    0f, 0f,  .025f, 1f,
+    0f, 0f,  1f, 0f
+)
+
 @Composable
 fun Matrix() {
     Row(
@@ -54,14 +61,24 @@ fun Matrix() {
                         .weight(5f),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+//                    val test: SliderColors = SliderColors(
+//                        activeTrackColor = Color.Red,
+//                        activeTickColor = Color.Red,
+//                        inactiveTrackColor = Color.Red,
+//                        inactiveTickColor = Color.Red,
+//                        disabledThumbColor = Color.Red,
+//                        disabledActiveTrackColor = Color.Red,
+//                        disabledActiveTickColor = Color.Red,
+//                        disabledInactiveTrackColor = Color.Red,
+//                        disabledInactiveTickColor = Color.Red
+//                    )
+
                     Slider(
                         value = ColorMatrixHolder.getElement(0, 0),
                         onValueChange = { ColorMatrixHolder.setElement(0, 0, it) },
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color.Red,
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -97,8 +114,6 @@ fun Matrix() {
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color(0xffffbd00),
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -134,8 +149,6 @@ fun Matrix() {
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color(0xffff00bd),
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -173,8 +186,6 @@ fun Matrix() {
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color(0xffbdff00),
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -210,8 +221,6 @@ fun Matrix() {
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color.Green,
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -247,8 +256,6 @@ fun Matrix() {
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color(0xff00ffbd),
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -285,8 +292,6 @@ fun Matrix() {
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color(0xffbd00ff),
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -322,8 +327,6 @@ fun Matrix() {
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color(0xff00bdff),
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -359,8 +362,6 @@ fun Matrix() {
                         colors = SliderDefaults.colors(
                             activeTrackColor = Color.Blue,
                         ),
-                        valueRange = -1.5f..1.5f,
-                        steps = 200,
                     )
                 }
                 Column(
@@ -383,22 +384,10 @@ fun Matrix() {
                             .weight(1f),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Button(
-                            onClick = { ColorMatrixHolder.preSet(i) },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = Color(0xFF78FAAE),    // зелёный Škoda
-                                contentColor = Color(0xFF0E3A2F)       // цвет текста
-                            )) {
-                            when (i) {
-                                0 -> Text("Reset ")
-                                1 -> Text("NS - 1")
-                                2 -> Text("NS - 2")
-                                3 -> Text("NS - 3")
-                                4 -> Text("BLF - 1")
-                                5 -> Text("BLF - 2")
-                                6 -> Text("BLF - 3")
-                                7 -> Text("SET")
-                            }
+                        Button(onClick = {
+                            ColorMatrixHolder.preSet(i)
+                        }) {
+                            Text("Preset ".plus(i))
                         }
                     }
                 }

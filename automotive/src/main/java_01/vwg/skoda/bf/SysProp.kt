@@ -23,17 +23,17 @@ class SysProp {
         }
     }
 
-//    @Suppress("PrivateApi")
-//    fun refresh(): Boolean {
-//        return try {
-//            val clazz = Class.forName("android.view.SurfaceControl")
-//            val method = clazz.getDeclaredMethod("invalidateDisplay", String::class.java)
-////            method.isAccessible = true
-//            method.invoke(null, "default")
-//            true
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//            false
-//        }
-//    }
+    @Suppress("PrivateApi")
+    fun refresh(): Boolean {
+        return try {
+            val clazz = Class.forName("android.view.SurfaceControl")
+            val method = clazz.getDeclaredMethod("invalidateDisplay", String::class.java)
+//            method.isAccessible = true
+            method.invoke(null, "default")
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
 }

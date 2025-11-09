@@ -17,8 +17,8 @@
         android:theme="@style/Theme.BF">
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.BF">
+            android:exported="true">
+<!--            android:theme="@style/Theme.BF.Main">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

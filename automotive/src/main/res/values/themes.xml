@@ -1,4 +1,18 @@
 <resources>
+<!--    <style name="Theme.BF" parent="android:Theme.Material.Light.NoActionBar" />-->
+    <style name="Theme.BF" parent="Theme.SplashScreen">
+        <!-- Цвет фона заставки -->
+        <item name="windowSplashScreenBackground">#001F3F</item>
 
-    <style name="Theme.BF" parent="android:Theme.Material.Light.NoActionBar" />
+        <!-- Логотип/иконка -->
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+
+        <!-- Тема после заставки -->
+        <item name="postSplashScreenTheme">@style/Theme.BF.Main</item>
+    </style>
+
+    <!-- Основная тема приложения -->
+    <style name="Theme.BF.Main" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Настройки твоего приложения -->
+    </style>
 </resources>
